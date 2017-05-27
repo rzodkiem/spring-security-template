@@ -1,9 +1,9 @@
 package com.rzodkiewicz.michal.security;
 
 import com.rzodkiewicz.michal.security.domain.Role;
-import com.rzodkiewicz.michal.security.domain.RoleRepository;
+import com.rzodkiewicz.michal.security.repository.RoleRepository;
 import com.rzodkiewicz.michal.security.domain.User;
-import com.rzodkiewicz.michal.security.domain.UserRepository;
+import com.rzodkiewicz.michal.security.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;

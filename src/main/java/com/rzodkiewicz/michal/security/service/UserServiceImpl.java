@@ -1,7 +1,7 @@
 package com.rzodkiewicz.michal.security.service;
 
 import com.rzodkiewicz.michal.security.domain.User;
-import com.rzodkiewicz.michal.security.domain.UserRepository;
+import com.rzodkiewicz.michal.security.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
