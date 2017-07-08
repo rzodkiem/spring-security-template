@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.sql.Date;
 
 @Entity
 @Data
@@ -29,5 +30,10 @@ public class User {
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "role_id")
     private Role role;
+
+    private boolean enabled;
+
+    @Column(name = "creation_date")
+    private Date creationDate;
 
 }
