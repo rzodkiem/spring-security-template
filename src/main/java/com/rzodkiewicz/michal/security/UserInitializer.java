@@ -1,9 +1,5 @@
 package com.rzodkiewicz.michal.security;
 
-import com.rzodkiewicz.michal.security.domain.Role;
-import com.rzodkiewicz.michal.security.domain.RoleRepository;
-import com.rzodkiewicz.michal.security.domain.User;
-import com.rzodkiewicz.michal.security.domain.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
@@ -11,7 +7,7 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 
 @Component
-public class UserInitializer {
+class UserInitializer {
 
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;

@@ -1,8 +1,8 @@
-package com.rzodkiewicz.michal.security.domain;
+package com.rzodkiewicz.michal.security;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface RoleRepository extends JpaRepository<Role, Long>{
+interface RoleRepository extends JpaRepository<Role, Long>{
 }

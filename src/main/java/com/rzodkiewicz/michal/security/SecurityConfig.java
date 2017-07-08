@@ -1,6 +1,5 @@
-package com.rzodkiewicz.michal.security.config;
+package com.rzodkiewicz.michal.security;
 
-import com.rzodkiewicz.michal.security.service.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,7 +13,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true)
-public class SecurityConfig extends WebSecurityConfigurerAdapter{
+class SecurityConfig extends WebSecurityConfigurerAdapter{
 
     private final CustomUserDetailsService customUserDetailsService;
 

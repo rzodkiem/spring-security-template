@@ -1,4 +1,4 @@
-package com.rzodkiewicz.michal.security.domain;
+package com.rzodkiewicz.michal.security;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,7 +13,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Role {
+class Role {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
