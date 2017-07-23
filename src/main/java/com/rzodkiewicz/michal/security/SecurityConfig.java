@@ -24,11 +24,19 @@ class SecurityConfig extends WebSecurityConfigurerAdapter{
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable()
-                .authorizeRequests().antMatchers("/").authenticated()
-                .anyRequest().authenticated()
-                .and().formLogin().permitAll()
-                .and().logout().deleteCookies("JSESSIONID").logoutUrl("/logout").logoutSuccessUrl("/login");
+        http
+                .csrf().disable()
+                .authorizeRequests()
+                    .antMatchers("/").authenticated()
+                    .antMatchers("/user/create").permitAll()
+                    .anyRequest().authenticated()
+                .and()
+                    .formLogin().permitAll()
+                .and()
+                    .logout()
+                        .deleteCookies("JSESSIONID")
+                        .logoutUrl("/logout")
+                        .logoutSuccessUrl("/login");
     }
 
     @Override
