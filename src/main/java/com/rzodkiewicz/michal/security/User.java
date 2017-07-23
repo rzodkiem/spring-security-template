@@ -1,5 +1,6 @@
 package com.rzodkiewicz.michal.security;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -22,6 +23,7 @@ class User {
     private String username;
 
     @Column(name = "password_hash")
+    @JsonIgnore
     private String passwordHash;
 
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
