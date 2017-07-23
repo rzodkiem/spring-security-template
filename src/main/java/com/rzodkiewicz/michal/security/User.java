@@ -24,7 +24,7 @@ class User {
     @Column(name = "password_hash")
     private String passwordHash;
 
-    @OneToOne(fetch = FetchType.EAGER)
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "role_id")
     private Role role;
 

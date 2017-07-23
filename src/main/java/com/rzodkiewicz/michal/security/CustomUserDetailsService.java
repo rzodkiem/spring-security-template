@@ -40,6 +40,6 @@ class CustomUserDetailsService implements UserDetailsService{
     }
 
     private List<GrantedAuthority> getGrantedAuthorities(User user){
-        return Arrays.asList(new SimpleGrantedAuthority(user.getRole().getName()));
+        return Arrays.asList(new SimpleGrantedAuthority(user.getRole().getName().name()));
     }
 }
