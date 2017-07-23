@@ -1,15 +1,13 @@
 package com.rzodkiewicz.michal.security;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "role")
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -21,6 +19,11 @@ class Role {
     private Long id;
 
     @Column(name = "role_name", length = 50)
-    private String name;
+    @Enumerated(EnumType.STRING)
+    private RoleEnum name = RoleEnum.USER;
+
+    enum RoleEnum{
+        USER
+    }
 
 }

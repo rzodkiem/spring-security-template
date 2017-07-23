@@ -1,14 +1,12 @@
 package com.rzodkiewicz.michal.security;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
-@Data
+@Getter
+@Setter
 @Table(name = "security_user")
 @NoArgsConstructor
 @AllArgsConstructor
