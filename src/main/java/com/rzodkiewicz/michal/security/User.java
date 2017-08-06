@@ -1,20 +1,19 @@
-package com.rzodkiewicz.michal.security.domain;
+package com.rzodkiewicz.michal.security;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.*;
 
 import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
-@Data
+@Getter
+@Setter
 @Table(name = "security_user")
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class User {
+class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,9 +24,10 @@ public class User {
     private String username;
 
     @Column(name = "password_hash")
+    @JsonIgnore
     private String passwordHash;
 
-    @OneToOne(fetch = FetchType.EAGER)
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "role_id")
     private Role role;
 

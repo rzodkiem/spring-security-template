@@ -1,6 +1,5 @@
-package com.rzodkiewicz.michal.security.service;
+package com.rzodkiewicz.michal.security;
 
-import com.rzodkiewicz.michal.security.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -13,7 +12,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @Service
-public class CustomUserDetailsService implements UserDetailsService{
+class CustomUserDetailsService implements UserDetailsService{
 
     private final UserService userService;
 
@@ -41,6 +40,6 @@ public class CustomUserDetailsService implements UserDetailsService{
     }
 
     private List<GrantedAuthority> getGrantedAuthorities(User user){
-        return Arrays.asList(new SimpleGrantedAuthority(user.getRole().getName()));
+        return Arrays.asList(new SimpleGrantedAuthority(user.getRole().getName().name()));
     }
 }
