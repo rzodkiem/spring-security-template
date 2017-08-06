@@ -35,7 +35,7 @@ class UserServiceImpl implements UserService{
 
     @Override
     public void validateUserDto(UserDto dto) throws UserException {
-        if(passwordMismatched(dto)){
+        if(!passwordsEquals(dto)){
             throw new UserException(UserException.UserError.PASSWORDS_NOT_MATCH);
         }
 
@@ -44,8 +44,8 @@ class UserServiceImpl implements UserService{
         }
     }
 
-    boolean passwordMismatched(UserDto userDto){
-        return !userDto.getPassword().equals(userDto.getPasswordRepeated());
+    boolean passwordsEquals(UserDto userDto){
+        return userDto.getPassword().equals(userDto.getPasswordRepeated());
     }
 
     boolean usernameNonUnique(String username){
